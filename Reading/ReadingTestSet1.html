@@ -2092,16 +2092,19 @@ let currentStudentGrade = "";
 
 let currentTestName = "BM_P1_Reading_Set 1";
 
+
 function getTestID(){
 
 return (
 currentStudentName + "_" +
 currentStudentGrade + "_" +
 SUBJECT + "_" +
-TEST_TYPE
+TEST_TYPE + "_" +
+currentTestName
 );
 
 }
+
 
 const wordDiv =
 document.getElementById("word");
@@ -2558,11 +2561,9 @@ async function loadProgress(){
 try{
 
 
-const testID =
-currentStudentName + "_" +
-currentStudentGrade + "_" +
-SUBJECT + "_" +
-TEST_TYPE;
+
+const testID = getTestID();
+
 
 
 const ref =
@@ -3820,11 +3821,9 @@ return;
 
 try{
 
-const testID =
-currentStudentName + "_" +
-currentStudentGrade + "_" +
-SUBJECT + "_" +
-TEST_TYPE;
+
+const testID = getTestID();
+
 
 
 await window.setDoc(
